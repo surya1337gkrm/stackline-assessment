@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from './components/Header/Header.tsx';
-
-function App() {
+import ProductContainer from './components/container/ProductContainer.tsx';
+const App = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-10 bg-gray-100'>
       <Header />
+      <ProductContainer />
     </div>
   );
-}
+};
 
 export default App;
