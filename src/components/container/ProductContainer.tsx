@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductData } from '../../store/productSlice.ts'; // Import the fetch action
 import { RootState, AppDispatch } from '../../store/store.ts'; // Import the RootState type
 import ProductInfo from '../Product/ProductInfo.tsx';
+import SalesChart from '../SalesChart/SalesChart.tsx';
 
 const ProductContainer: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,7 +35,7 @@ const ProductContainer: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className='flex flex-1'>
       <aside className='w-1/5 p-4 flex items-center justify-center'>
         <ProductInfo
           title={product.title}
@@ -43,6 +44,11 @@ const ProductContainer: React.FC = () => {
           image={product.image}
         />
       </aside>
+      <main className='w-4/5 p-4 flex'>
+        <div className='bg-white w-full h-fit'>
+          <SalesChart />
+        </div>
+      </main>
     </div>
   );
 };
