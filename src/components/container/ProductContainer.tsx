@@ -1,8 +1,7 @@
-// src/containers/ProductContainer.tsx
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductData } from '../../store/productSlice.ts'; // Import the fetch action
-import { RootState, AppDispatch } from '../../store/store.ts'; // Import the RootState type
+import { fetchProductData } from '../../store/productSlice.ts';
+import { RootState, AppDispatch } from '../../store/store.ts';
 import ProductInfo from '../Product/ProductInfo.tsx';
 import SalesChart from '../SalesChart/SalesChart.tsx';
 import SalesTable from '../SalesTable/SalesTable.tsx';
@@ -10,27 +9,23 @@ import SalesTable from '../SalesTable/SalesTable.tsx';
 const ProductContainer: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
-  // Access the product data, loading state, and error from the Redux store
   const { product, status, error } = useSelector(
     (state: RootState) => state.product
   );
 
-  // Fetch data when the component mounts
   useEffect(() => {
     dispatch(fetchProductData());
   }, [dispatch]);
 
-  // Handle loading state
   if (status === 'loading') {
     return <div className='animate-pulse'>Loading...</div>;
   }
 
-  // Handle error state
+
   if (status === 'failed') {
     return <div>Error: {error}</div>;
   }
 
-  // Handle case where no product data is available
   if (!product) {
     return <div>No product data available.</div>;
   }

@@ -8,7 +8,7 @@ import {
   SortingState,
   flexRender,
 } from '@tanstack/react-table';
-import { Sale } from '../../utils/types'; // Import the Sale type
+import { Sale } from '../../utils/types';
 
 interface SalesTableProps {
   data: Sale[];
@@ -16,8 +16,6 @@ interface SalesTableProps {
 
 const SalesTable: React.FC<SalesTableProps> = ({ data }) => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
-
-  // Define columns
   const columns = React.useMemo<ColumnDef<Sale>[]>(
     () => [
       {
@@ -48,7 +46,6 @@ const SalesTable: React.FC<SalesTableProps> = ({ data }) => {
     []
   );
 
-  // Create the table instance
   const table = useReactTable({
     data,
     columns,
@@ -100,7 +97,6 @@ const SalesTable: React.FC<SalesTableProps> = ({ data }) => {
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
       <div className='flex items-center justify-between mt-4'>
         <div className='flex gap-2'>
           <button

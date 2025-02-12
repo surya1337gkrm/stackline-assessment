@@ -1,17 +1,14 @@
-// src/components/SalesChart/SalesChart.tsx
 import React from 'react';
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { groupSalesByMonth } from '../../utils/groupSalesByMonth.ts'; // Import the utility function
+import { groupSalesByMonth } from '../../utils/groupSalesByMonth.ts';
 
 const SalesChart: React.FC = () => {
-  // Fetch sales data from the Redux store
   const salesData = useSelector(
     (state: RootState) => state.product.product?.sales
   );
 
-  // Group sales data by month and calculate cumulative sales
   if (!salesData) return;
   const monthlySalesData = groupSalesByMonth(salesData);
 
