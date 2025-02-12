@@ -15,16 +15,16 @@ const SalesChart: React.FC = () => {
   return (
     <ResponsiveContainer
       width='100%'
-      height={400}
-      className=' bg-white mb-8 p-4'>
+      height={500}
+      className=' bg-white mb-8 p-4 shadow-md'>
       <div className='text-lg text-gray-500'>Retail Sales</div>
       <LineChart
         data={monthlySalesData}
         margin={{
-          top: 5,
+          top: 20,
           right: 30,
           left: 20,
-          bottom: 0,
+          bottom: 45,
         }}>
         <XAxis dataKey='month' />
         <Tooltip />
