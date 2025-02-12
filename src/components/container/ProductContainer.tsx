@@ -5,6 +5,7 @@ import { RootState, AppDispatch } from '../../store/store.ts';
 import ProductInfo from '../Product/ProductInfo.tsx';
 import SalesChart from '../SalesChart/SalesChart.tsx';
 import SalesTable from '../SalesTable/SalesTable.tsx';
+import Skeleton from '../UI/Skeleton.tsx';
 
 const ProductContainer: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,7 +19,7 @@ const ProductContainer: React.FC = () => {
   }, [dispatch]);
 
   if (status === 'loading') {
-    return <div className='animate-pulse'>Loading...</div>;
+    return <Skeleton />;
   }
 
   if (status === 'failed') {
