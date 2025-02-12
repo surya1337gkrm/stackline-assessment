@@ -14,7 +14,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
   image,
 }) => {
   return (
-    <div className='bg-white p-6 shadow-md h-screen min-w-fit flex flex-col items-center'>
+    <div className='bg-white p-6 shadow-md h-min lg:h-screen min-w-fit flex flex-col items-center'>
       {image && <img src={image} alt={title} className='w-min h-min' />}
       <h1 className='text-xl font-bold text-gray-800 text-center'>{title}</h1>
       <p className='text-sm text-gray-400 mt-2 text-center'>{subtitle}</p>

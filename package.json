@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
+    "@tanstack/react-table": "^8.21.2",
     "cra-template-typescript": "1.2.0",
     "date-fns": "^4.1.0",
     "react": "^19.0.0",

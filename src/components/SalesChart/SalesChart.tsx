@@ -19,7 +19,7 @@ const SalesChart: React.FC = () => {
     <ResponsiveContainer
       width='100%'
       height={400}
-      className=' bg-white mb-12 p-4'>
+      className=' bg-white mb-8 p-4'>
       <div className='text-lg text-gray-500'>Retail Sales</div>
       <LineChart
         data={monthlySalesData}
